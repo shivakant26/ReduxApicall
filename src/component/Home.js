@@ -6,7 +6,6 @@ class Home extends React.Component{
     render(){
         return(
             <div>
-                <h1>Call Api Using Redux</h1>
                 <div className='btn-section'>
                 <button onClick={()=>{this.props.actionhandler()}}>getdata</button>
                 </div>
@@ -35,7 +34,7 @@ class Home extends React.Component{
     }
 }
 const mapStateToProps = state =>{
-    console.log("state",state.reducer.data)
+    // console.log("state",state.reducer.data)
     return {
         data: state.reducer.data
     }
@@ -43,8 +42,8 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = dispatch =>{
     return {
-        actionhandler : () => dispatch(getData())
-    }
+        actionhandler : () => dispatch(getData()),
+   }
 }
 
 export default connect(mapStateToProps , mapDispatchToProps)(Home);

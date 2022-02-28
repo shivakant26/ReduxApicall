@@ -17,3 +17,23 @@ export const getData = () => {
             });
     };
 };
+
+
+export const getItem = () => {
+    return (dispatch) => {
+        return axios.get("https://fakestoreapi.com/products/category/jewelery")
+            .then(response => {
+                return response.data
+            })
+            .then(data => {
+                dispatch({
+                    type:"GET_ITEM",
+                    payload: data
+                })
+            })
+            .catch(error => {
+                throw (error);
+            });
+    };
+};
+
