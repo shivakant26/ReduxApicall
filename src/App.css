@@ -1,0 +1,86 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.card{
+    width: 28%;
+    /* border: 1px solid; */
+    padding: 20px 10px;
+    display: inline-grid;
+    margin: 10px;
+    min-height: 322px;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 70%);
+    border-radius: 5px;
+}
+button{
+    background: black;
+    color: #fff;
+    padding: 10px 35px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 50px;
+    border: 2px solid black;
+    cursor: pointer;
+    letter-spacing: 1.2px;
+}
+h1{
+    background: blueviolet;
+    line-height: 100px;
+    color: #fff;
+    margin: 0;
+}
+.btn-section{
+  padding: 35px 30px;
+}
+.card-button button{
+  background: blueviolet;
+  transition: .4s;
+  border: 2px solid blueviolet;
+}
+.card-button button:hover{
+  background-color: black;
+  background-image: linear-gradient(to right, #AA076B 0%, #61045F  51%, #AA076B  100%);
+  border:2px solid #fff;
+  
+}
+
+.gradient-text {
+  color:#476098;  
+}
+
+
+
