@@ -3,19 +3,54 @@ import { connect } from 'react-redux';
 import { getData } from '../Redux/Action/action';
 
 class Home extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+           searchText:"",
+           list:this.props.data
+        }
+    }
+   
+    componentDidMount(){
+        console.log("componentdidmount")
+       this.props.actionhandler();
+    }
+
+    // static getDerivedStateFromProps(){
+    //     return {list:this.props.data}
+    //   }
+
+    search(e){
+        let list = [];
+         let searchText = e.target.value;
+         let filterdata = this.props.data.filter((element)=>{
+             return element.title.includes(searchText.toLowerCase() )
+         })
+         this.setState({
+             list:filterdata,
+             searchText:searchText
+         })
+    }
     render(){
+        console.log("render")
         return(
             <div>
-                <h1>Call Api Using Redux</h1>
+                
                 <div className='btn-section'>
-                <button onClick={()=>{this.props.actionhandler()}}>getdata</button>
+                <input type="text"
+                 placeholder='Search Text'
+                 value={this.state.searchText}
+                 onChange={(e)=>{this.search(e)}}
+                 />
                 </div>
                 {
-                    this.props.data ?  
+                    this.state.list ?  
                     <div className='card_wr'>
                         {
-                            this.props.data.map((item , i)=>
-                        <div className='card' key={i}>
+                            this.state.list.map((item , i)=>
+                            
+                            <div className='card' key={i}>
+                            
                             <div className='card_title'>
                                 <h2 className='gradient-text'>{item.title}</h2>
                             </div>
@@ -35,7 +70,7 @@ class Home extends React.Component{
     }
 }
 const mapStateToProps = state =>{
-    console.log("state",state.reducer.data)
+    // console.log("state",state.reducer.data)
     return {
         data: state.reducer.data
     }
