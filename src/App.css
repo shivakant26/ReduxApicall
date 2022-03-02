@@ -81,6 +81,14 @@ h1{
 .gradient-text {
   color:#476098;  
 }
+input[type="text"]{
+    padding: 10px 20px;
+    outline: none;
+    border: 2px solid darkred;
+    border-radius: 50px;
+    font-style: oblique;
+    font-size: 18px;
 
+}
 
 
