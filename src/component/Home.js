@@ -12,16 +12,14 @@ class Home extends React.Component{
     }
    
     componentDidMount(){
-        console.log("componentdidmount")
        this.props.actionhandler();
     }
 
     // static getDerivedStateFromProps(){
-    //     return {list:this.props.data}
+    //     return {list : this.props.data}
     //   }
 
     search(e){
-        let list = [];
          let searchText = e.target.value;
          let filterdata = this.props.data.filter((element)=>{
              return element.title.includes(searchText.toLowerCase() )
